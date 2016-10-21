@@ -63,8 +63,8 @@ source $ZSH/oh-my-zsh.sh
 # else
 # fi
 
-export EDITOR='subl -w'
-export GIT_EDITOR='subl -w'
+# export EDITOR='subl -w'
+# export GIT_EDITOR='subl -w'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -84,13 +84,7 @@ export GIT_EDITOR='subl -w'
 alias ls='ls -lahG'
 alias c='clear'
 
-alias gup='git up'
-alias postgresup='postgres -D /usr/local/var/postgres'
 alias fuck='sudo $(fc -ln -1)'
-
-alias aliases='subl ~/.zshrc'
-
-alias ,,='cd ../..'
 
 alias be='bundle exec'
 alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
@@ -115,6 +109,5 @@ mkpr () {
 
 unsetopt nomatch
 eval "$(rbenv init -)"
-
 eval "$(direnv hook zsh)"
 
