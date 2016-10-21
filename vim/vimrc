@@ -1,0 +1,3 @@
+set number
+map <silent> <C-n> :NERDTreeToggle<CR>
+syntax on
