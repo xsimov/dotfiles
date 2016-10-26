@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='vim'
 # else
 # fi
-
+export EVENT_NOKQUEUE=1
 # export EDITOR='subl -w'
 # export GIT_EDITOR='subl -w'
 
