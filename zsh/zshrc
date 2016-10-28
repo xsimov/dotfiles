@@ -111,3 +111,5 @@ unsetopt nomatch
 eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
