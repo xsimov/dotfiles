@@ -56,10 +56,27 @@ filetype plugin indent on    " required
 
 set number
 syntax on
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
 nmap <leader>w :w<CR>
 nmap <leader>wq :wq<CR>
+nmap <leader>- :sp<CR><C-p>
+nmap <leader>\ :vsp<CR><C-p>
+nmap <leader>o o<Esc>k
+nmap <leader>O O<Esc>j
+
+imap jk <Esc>
+imap kj <Esc>
+imap <leader>o <C-o>o
+imap <leader>O <C-o>O
+imap <Esc> <Esc>:w<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+autocmd!
+au CursorHoldI <buffer> stopinsert 
