@@ -57,14 +57,10 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-# fi
 export EVENT_NOKQUEUE=1
+export EDITOR='vim'
+export GIT_EDITOR='vim'
 # export EDITOR='subl -w'
-# export GIT_EDITOR='subl -w'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -88,6 +84,7 @@ alias fuck='sudo $(fc -ln -1)'
 
 alias be='bundle exec'
 alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
+alias vimp='vim +CtrlP'
 
 gac () {
   git add -A
@@ -110,6 +107,5 @@ mkpr () {
 unsetopt nomatch
 eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
