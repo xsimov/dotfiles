@@ -1,4 +1,4 @@
-source ~/.vimconf/.plugins.vim
+source ~/dotfiles/vim/plugins.vim
 
 set number
 set expandtab
