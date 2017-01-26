@@ -5,11 +5,13 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:ctrlp_show_hidden = 1
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>q :vsp .<CR>
 
 nmap <leader>w :w<CR>
 nmap <leader>wq :wq<CR>
@@ -34,4 +36,4 @@ au FocusLost,BufLeave * wa
 
 syntax on
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" match OverLength /\%81v.\+/
