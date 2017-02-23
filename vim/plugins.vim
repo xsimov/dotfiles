@@ -40,6 +40,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'sjl/vitality.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'shougo/unite.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

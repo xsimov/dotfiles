@@ -1,4 +1,4 @@
-export PATH="$PATH:/usr/local/Cellar:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/texbin"
+export PATH="$PATH:/usr/local/Cellar:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -85,6 +85,7 @@ alias fuck='sudo $(fc -ln -1)'
 alias be='bundle exec'
 alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
 alias vimp='vim +CtrlP'
+alias rubocurrent='rubocop $(git status | egrep modified.*rb | sed s/modified://)'
 
 gac () {
   git add -A
