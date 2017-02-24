@@ -38,6 +38,7 @@ autocmd!
 au CursorHoldI <buffer> stopinsert
 au FocusLost,BufLeave * wa
 syntax on
+
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 highlight TrailingSpaces ctermbg=red ctermfg=white guibg=#592929
 
