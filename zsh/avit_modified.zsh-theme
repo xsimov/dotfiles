@@ -1,7 +1,7 @@
 # AVIT ZSH Theme
 
 PROMPT='
-$(_user_host)${_current_dir}(%{$fg[red]%}$(_ruby_version)%{$reset_color%})$(git_prompt_info)
+$(_user_host)${_current_dir}(%{$fg[red]%}$(_ruby_version)%{$reset_color%}) $(git_prompt_info)
 ▶ '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
