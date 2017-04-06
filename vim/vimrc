@@ -7,6 +7,11 @@ set softtabstop=2
 set mouse=a
 colorscheme angr
 
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 let g:ctrlp_show_hidden = 1
 
@@ -16,6 +21,7 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>q :vsp .<CR>
 map <Leader>0 ^i
+map <Leader>f :echo @%<CR>
 
 nmap <leader>w :w<CR>
 nmap <leader>wq :wq<CR>
@@ -23,6 +29,7 @@ nmap <leader>- :sp<CR><C-p>
 nmap <leader>\ :vsp<CR><C-p>
 nmap <leader>o o<Esc>k
 nmap <leader>O O<Esc>j
+nmap <leader>h :noh<CR>
 
 imap jk <Esc>:w<CR>
 imap kj <Esc>:w<CR>
@@ -42,7 +49,11 @@ syntax on
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 highlight TrailingSpaces ctermbg=red ctermfg=white guibg=#592929
 
-match TrailingSpaces /\s$/
+match TrailingSpaces /\s\+$/
+
+function ForceHighlightingTrailingSpaces()
+  match TrailingSpaces /\s\+$/
+endfunction
 
 function ShowOver80Chars()
   match OverLength /\%81v.\+/
@@ -51,3 +62,15 @@ endfunction
 function HideOver80Chars()
   match OverLength //
 endfunction
+
+func GitGrep(...)
+  let save = &grepprg
+  set grepprg=git\ grep\ -n\ $*
+  let s = 'grep'
+  for i in a:000
+    let s = s . ' ' . i
+  endfor
+  exe s
+  let &grepprg = save
+endfun
+command -nargs=? G call GitGrep(<f-args>): copen<CR>
