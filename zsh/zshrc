@@ -105,6 +105,10 @@ mkpr () {
   fi
 }
 
+gco () {
+  gco $(gb | fzf)
+}
+
 unsetopt nomatch
 eval "$(rbenv init -)"
 # eval "$(direnv hook zsh)"
