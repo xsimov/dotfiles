@@ -4,17 +4,21 @@ set number
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=4
 set mouse=a
 set backspace=2
 colorscheme angr
 
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
 
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+let g:mix_command = 'call Send_to_Tmux("mix test")'
 let g:ctrlp_show_hidden = 1
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -31,11 +35,13 @@ nmap <leader>\ :vsp<CR><C-p>
 nmap <leader>o o<Esc>k
 nmap <leader>O O<Esc>j
 nmap <leader>h :noh<CR>
+nmap <Leader>D Orequire 'pry';binding.pry<Esc>
 
 imap jk <Esc>:w<CR>
 imap kj <Esc>:w<CR>
 imap <leader>o <C-o>o
 imap <leader>O <C-o>O
+imap <Leader>D require 'pry';binding.pry<Esc>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

@@ -86,6 +86,7 @@ alias be='bundle exec'
 alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
 alias vimp='vim +CtrlP'
 alias rubocurrent='rubocop $(git status | egrep modified.*rb | sed s/modified://)'
+alias fco='git checkout $(git branch | fzf)'
 
 gac () {
   git add -A
@@ -103,10 +104,6 @@ mkpr () {
   else
     open "$(git config --get remote.origin.url)/compare/develop...$(git rev-parse --abbrev-ref HEAD)?expand=1"
   fi
-}
-
-gco () {
-  gco $(gb | fzf)
 }
 
 unsetopt nomatch

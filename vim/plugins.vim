@@ -39,13 +39,15 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'sjl/vitality.vim'
 Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'shougo/unite.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'fatih/vim-go'
+Plugin 'elixir-lang/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype on
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
