@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git ruby rails)
+plugins=(docker git ruby rails tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,6 +105,8 @@ mkpr () {
     open "$(git config --get remote.origin.url)/compare/develop...$(git rev-parse --abbrev-ref HEAD)?expand=1"
   fi
 }
+
+ssh-add -K ~/.ssh/id_rsa
 
 unsetopt nomatch
 eval "$(rbenv init -)"
