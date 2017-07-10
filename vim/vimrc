@@ -12,29 +12,30 @@ colorscheme angr
 set ignorecase
 set smartcase
 
-let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-let g:mix_command = 'call Send_to_Tmux("mix test")'
 let g:ctrlp_show_hidden = 1
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let test#ruby#rspec#executable = 'bundle exec rspec'
+let g:test#preserve_screen = 1
+let test#strategy = {
+      \ "suite": "tslime",
+      \ "file": "tslime",
+      \ "nearest": "vtr",
+      \ "last": "vtr",
+      \ }
+map <Leader>t :TestFile<CR>
+map <Leader>s :TestNearest<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>a :TestSuite<CR>
 map <Leader>q :vsp .<CR>
 map <Leader>0 ^i
 map <Leader>f :echo @%<CR>
 
-nmap <leader>w :w<CR>
-nmap <leader>wq :wq<CR>
 nmap <leader>- :sp<CR><C-p>
 nmap <leader>\ :vsp<CR><C-p>
-nmap <leader>o o<Esc>k
-nmap <leader>O O<Esc>j
-nmap <leader>h :noh<CR>
 nmap <Leader>D Orequire 'pry';binding.pry<Esc>
 
 imap jk <Esc>:w<CR>
@@ -80,4 +81,4 @@ func GitGrep(...)
   exe s
   let &grepprg = save
 endfun
-command -nargs=? G call GitGrep(<f-args>): copen<CR>
+command -nargs=? G call GitGrep(<f-args>):tabe copen<CR>
