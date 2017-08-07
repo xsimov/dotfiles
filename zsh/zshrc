@@ -106,8 +106,6 @@ mkpr () {
   fi
 }
 
-ssh-add -K ~/.ssh/id_rsa
-
 unsetopt nomatch
 eval "$(rbenv init -)"
 # eval "$(direnv hook zsh)"
