@@ -1,6 +1,8 @@
-export PATH="$PATH:/usr/local/Cellar:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin"
+export PATH="$PATH:/usr/local/Cellar:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export CDPATH=$HOME
+export GOPATH=$HOME/go
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
