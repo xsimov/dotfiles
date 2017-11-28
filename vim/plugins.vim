@@ -44,7 +44,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'fatih/vim-go'
 Plugin 'janko-m/vim-test'
+Plugin 'godlygeek/tabular'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

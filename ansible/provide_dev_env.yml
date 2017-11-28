@@ -41,6 +41,10 @@
     file:
       path: ~/.vim/colors
       state: directory
+  - name: Creating ftplugin folder inside .vim
+    file:
+      path: ~/.vim/ftplugin
+      state: directory
   - name: Linking dotfiles
     file:
       src: '~/dotfiles/{{ item.src }}'
@@ -50,6 +54,7 @@
     with_items:
         - { src: 'vim/vimrc', dest: '.vimrc' }
         - { src: 'vim/angr.vim', dest: '.vim/colors/angr.vim' }
+        - { src: 'vim/ftplugin', dest: '.vim/ftplugin' }
         - { src: 'zsh/zshrc', dest: '.zshrc' }
         - { src: 'tmux/tmux.conf', dest: '.tmux.conf' }
         - { src: 'global_gitignore', dest: '.gitignore' }
