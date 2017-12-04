@@ -33,6 +33,18 @@
     homebrew:
       name: ruby-build
       state: present
+  - name: Installing PostgreSQL
+    homebrew:
+      name: postgresql
+      state: present
+  - name: Installing MySQL
+    homebrew:
+      name: mysql
+      state: present
+  - name: Installing Redis
+    homebrew:
+      name: redis
+      state: present
   - name: Installing oh my zsh
     shell: sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
   - name: Changing default shell for Xavier
