@@ -82,8 +82,6 @@ export GIT_EDITOR='vim'
 alias ls='ls -lahG'
 alias c='clear'
 
-alias fuck='sudo $(fc -ln -1)'
-
 alias be='bundle exec'
 alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
 alias vimp='vim +CtrlP'
@@ -113,3 +111,5 @@ eval "$(rbenv init -)"
 # eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
