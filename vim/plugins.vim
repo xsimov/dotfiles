@@ -28,7 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Yggdroot/LeaderF'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
@@ -47,6 +47,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'godlygeek/tabular'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

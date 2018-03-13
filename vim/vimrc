@@ -20,12 +20,6 @@ set smartcase
 
 set directory^=$HOME/.vim/tmp//
 
-let g:ctrlp_show_hidden = 1
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 let g:user_emmet_mode='a'
 
 let test#ruby#rspec#executable = 'bundle exec rspec'
@@ -41,6 +35,7 @@ let test#strategy = {
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'go']
 let g:go_fmt_command = 'goimports'
 
+map <C-p> :LeaderfFile<CR>
 map <Leader>t :w<CR>:TestFile<CR>
 map <Leader>s :w<CR>:TestNearest<CR>
 map <Leader>l :w<CR>:TestLast<CR>
@@ -64,8 +59,6 @@ nmap <leader>- :sp<CR><C-p>
 nmap <leader>\ :vsp<CR><C-p>
 nmap <Leader>D Orequire 'pry';binding.pry<Esc>
 
-imap jk <Esc>
-imap kj <Esc>
 imap <Leader>D require 'pry';binding.pry<Esc>
 
 nnoremap <C-J> <C-W><C-J>
