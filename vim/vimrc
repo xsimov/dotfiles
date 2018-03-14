@@ -20,10 +20,12 @@ set smartcase
 
 set directory^=$HOME/.vim/tmp//
 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 let g:user_emmet_mode='a'
 
 let test#ruby#rspec#executable = 'bundle exec rspec'
-let test#ruby#minitest#executable = 'COVERAGE=1 bundle exec rake test'
+let test#ruby#minitest#executable = 'bin/rake test'
 let g:test#preserve_screen = 1
 let test#strategy = {
       \ "suite": "tslime",
@@ -33,33 +35,46 @@ let test#strategy = {
       \ }
 
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'go']
+
 let g:go_fmt_command = 'goimports'
 
 map <C-p> :LeaderfFile<CR>
+
+let g:go_highlight_extra_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_function_arguments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_function_calls = 1
+
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+
+>>>>>>> Refine vim and tmux config and remove ZSH aliases
 map <Leader>t :w<CR>:TestFile<CR>
 map <Leader>s :w<CR>:TestNearest<CR>
 map <Leader>l :w<CR>:TestLast<CR>
 map <Leader>a :w<CR>:TestSuite<CR>
-
-" with COVERAGE flag (companies)
-map <Leader>T :w<CR>:TestFile<CR>
-map <Leader>S :w<CR>:TestNearest<CR>
-map <Leader>L :w<CR>:TestLast<CR>
-map <Leader>A :w<CR>:TestSuite<CR>
 
 map <Leader>q :vsp .<CR>
 map <Leader>f :echo @%<CR>
 map <Leader>* :G <cword><CR>
 map <Leader>S :Gstatus<CR>
 
+map <C-P> :LeaderfFile<CR>
 nmap <leader>w :cw<CR>
 nmap <leader>] :cn<CR>
 nmap <leader>[ :cp<CR>
 nmap <leader>- :sp<CR><C-p>
 nmap <leader>\ :vsp<CR><C-p>
-nmap <Leader>D Orequire 'pry';binding.pry<Esc>
+nmap <leader>D Orequire 'pry';binding.pry<Esc>
 
-imap <Leader>D require 'pry';binding.pry<Esc>
+imap <leader>D require 'pry';binding.pry<Esc>
+imap <S-Tab> <C-p>
+imap <Tab> <C-n>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -73,12 +88,12 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 syntax on
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-highlight TrailingSpaces ctermbg=red ctermfg=white guibg=#592929
+highlight HLTrailingSpaces ctermbg=red ctermfg=white guibg=#592929
 
-match TrailingSpaces /\s\+$/
+match HLTrailingSpaces /\s\+$/
 
 function ForceHighlightingTrailingSpaces()
-  match TrailingSpaces /\s\+$/
+  match HLTrailingSpaces /\s\+$/
 endfunction
 
 function ShowOver80Chars()
@@ -99,4 +114,4 @@ func GitGrep(...)
   exe s
   let &grepprg = save
 endfun
-command -nargs=? G call GitGrep(<f-args>):tabe copen<CR>
+command -nargs=? G call GitGrep(<f-args>)

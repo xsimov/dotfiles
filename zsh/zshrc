@@ -1,7 +1,7 @@
 export PATH="$PATH:/usr/local/Cellar:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export CDPATH=$HOME
+export CDPATH=$HOME/Code
 export GOPATH=$HOME/go
 
 # Set name of the theme to load.
@@ -80,31 +80,10 @@ export GIT_EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ls='ls -lahG'
-alias c='clear'
 
 alias be='bundle exec'
-alias fwproc='bundle exec foreman start -f Procfile.osx.dev'
-alias vimp='vim +CtrlP'
 alias rubocurrent='rubocop $(git status | egrep modified.*rb | sed s/modified://)'
 alias fco='git checkout $(git branch | fzf)'
-
-gac () {
-  git add -A
-  git commit -m "$@"
-}
-
-gar () {
-  git remote add $1 $2
-}
-
-mkpr () {
-  if [[ $(git config --get remote.origin.url) =~ .*git@github.* ]]
-  then
-    open "https://github.com/${${$(git config --get remote.origin.url)##*:}%%.*}/compare/develop...$(git rev-parse --abbrev-ref HEAD)?expand=1"
-  else
-    open "$(git config --get remote.origin.url)/compare/develop...$(git rev-parse --abbrev-ref HEAD)?expand=1"
-  fi
-}
 
 unsetopt nomatch
 eval "$(rbenv init -)"
