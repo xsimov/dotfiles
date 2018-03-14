@@ -53,7 +53,6 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
->>>>>>> Refine vim and tmux config and remove ZSH aliases
 map <Leader>t :w<CR>:TestFile<CR>
 map <Leader>s :w<CR>:TestNearest<CR>
 map <Leader>l :w<CR>:TestLast<CR>
@@ -64,7 +63,6 @@ map <Leader>f :echo @%<CR>
 map <Leader>* :G <cword><CR>
 map <Leader>S :Gstatus<CR>
 
-map <C-P> :LeaderfFile<CR>
 nmap <leader>w :cw<CR>
 nmap <leader>] :cn<CR>
 nmap <leader>[ :cp<CR>
@@ -73,7 +71,6 @@ nmap <leader>\ :vsp<CR><C-p>
 nmap <leader>D Orequire 'pry';binding.pry<Esc>
 
 imap <leader>D require 'pry';binding.pry<Esc>
-imap <S-Tab> <C-p>
 imap <Tab> <C-n>
 
 nnoremap <C-J> <C-W><C-J>
