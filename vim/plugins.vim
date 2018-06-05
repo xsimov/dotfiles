@@ -32,6 +32,7 @@ Plugin 'Yggdroot/LeaderF'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kana/vim-textobj-user'
@@ -44,6 +45,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'prettier/vim-prettier'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

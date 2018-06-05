@@ -1,4 +1,5 @@
 source ~/dotfiles/vim/plugins.vim
+source ~/dotfiles/vim/prettier.vim
 
 autocmd ColorScheme * highlight TrailingSpaces ctermbg=red guibg=#592929 ctermfg=white
 
@@ -24,7 +25,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 let g:user_emmet_mode='a'
 
-let test#ruby#rspec#executable = 'bundle exec rspec'
+let test#ruby#rspec#executable = 'bin/rspec'
 let test#ruby#minitest#executable = 'bin/rake test'
 let g:test#preserve_screen = 1
 let test#strategy = {
@@ -53,7 +54,8 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
->>>>>>> Refine vim and tmux config and remove ZSH aliases
+let g:prettier#exec_cmd_path = "client/node_modules/prettier/bin-prettier.js"
+
 map <Leader>t :w<CR>:TestFile<CR>
 map <Leader>s :w<CR>:TestNearest<CR>
 map <Leader>l :w<CR>:TestLast<CR>
@@ -64,7 +66,6 @@ map <Leader>f :echo @%<CR>
 map <Leader>* :G <cword><CR>
 map <Leader>S :Gstatus<CR>
 
-map <C-P> :LeaderfFile<CR>
 nmap <leader>w :cw<CR>
 nmap <leader>] :cn<CR>
 nmap <leader>[ :cp<CR>
@@ -115,3 +116,12 @@ func GitGrep(...)
   let &grepprg = save
 endfun
 command -nargs=? G call GitGrep(<f-args>)
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None

@@ -2,3 +2,4 @@
 *.swo
 dump.rdb
 .byebug_history
+.vscode
