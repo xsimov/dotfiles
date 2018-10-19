@@ -25,8 +25,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 let g:user_emmet_mode='a'
 
-let test#ruby#rspec#executable = 'bin/rspec'
-let test#ruby#minitest#executable = 'bin/rake test'
+let test#ruby#rspec#executable = 'bundle exec rspec'
+let test#ruby#minitest#executable = 'bundle exec rake test'
 let g:test#preserve_screen = 1
 let test#strategy = {
       \ "suite": "tslime",
