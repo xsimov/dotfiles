@@ -74,7 +74,6 @@ nmap <leader>\ :vsp<CR><C-p>
 nmap <leader>D Orequire 'pry';binding.pry<Esc>
 
 imap <leader>D require 'pry';binding.pry<Esc>
-imap <S-Tab> <C-p>
 imap <Tab> <C-n>
 
 nnoremap <C-J> <C-W><C-J>
