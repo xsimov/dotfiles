@@ -79,6 +79,7 @@ export GIT_EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ls='ls -lahG'
+alias mux='tmuxinator'
 
 alias be='bundle exec'
 alias rubocurrent='bundle exec rubocop $(git status | egrep modified.*rb | sed s/modified://)'
