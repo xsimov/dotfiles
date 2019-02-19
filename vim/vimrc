@@ -54,7 +54,9 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
-let g:prettier#exec_cmd_path = "client/node_modules/prettier/bin-prettier.js"
+" let g:prettier#exec_cmd_path = "client/node_modules/prettier/bin-prettier.js"
+
+let g:Lf_CommandMap = {'<C-x>': ['<C-_>'], '<C-]>': ['<C-\>'], '<C-S>': ['<C-W>']}
 
 map <Leader>t :w<CR>:TestFile<CR>
 map <Leader>s :w<CR>:TestNearest<CR>
@@ -114,7 +116,7 @@ func GitGrep(...)
   exe s
   let &grepprg = save
 endfun
-command -nargs=? G call GitGrep(<f-args>)
+command -nargs=? F call GitGrep(<f-args>)
 
 " Triger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044

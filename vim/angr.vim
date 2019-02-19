@@ -4,6 +4,8 @@
 
 " Heavily based on Janah and Ego
 
+let g:solarized_termcolors=16
+set t_Co=256
 set background=dark
 hi clear
 
