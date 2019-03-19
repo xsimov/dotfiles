@@ -12,6 +12,7 @@ set tabstop=4
 set mouse=a
 set backspace=2
 set splitright
+set splitbelow
 set gcr=a:blinkon0
 set guifont=Monaco:h15
 colorscheme angr
@@ -65,7 +66,7 @@ map <Leader>a :w<CR>:TestSuite<CR>
 
 map <Leader>q :vsp .<CR>
 map <Leader>f :echo @%<CR>
-map <Leader>* :G <cword><CR>
+map <Leader>* :F <cword><CR>
 map <Leader>S :Gstatus<CR>
 
 nmap <leader>w :cw<CR>

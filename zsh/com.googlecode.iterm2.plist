@@ -147,11 +147,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1920 1200 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>435 381 918 514 0 0 1680 1027 </string>
+	<string>868 842 928 394 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>56 55 1459 972 0 0 2560 1440 </string>
+	<string>0 0 2035 1224 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2560 159 2260 1281 2560 0 1680 1050 </string>
+	<string>525 216 2035 1224 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>56 0 1624 1050 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -180,13 +180,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.013031005859375</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.013031005859375</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.013031005859375</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -310,13 +310,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.8646240234375</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.8646240234375</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.8646240234375</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1101,7 +1101,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-10-31T16:18:53Z</date>
+	<date>2019-02-22T15:47:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1157,7 +1157,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.4beta4</string>
+	<string>3.2.7beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
