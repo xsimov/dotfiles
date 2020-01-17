@@ -1,8 +1,6 @@
 source ~/dotfiles/vim/plugins.vim
 source ~/dotfiles/vim/prettier.vim
 
-autocmd ColorScheme * highlight TrailingSpaces ctermbg=red guibg=#592929 ctermfg=white
-
 set number
 set nornu
 set expandtab
@@ -36,7 +34,7 @@ let test#strategy = {
       \ "last": "tslime",
       \ }
 
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'go']
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby', 'go', 'javascript']
 
 let g:go_fmt_command = 'goimports'
 
@@ -55,8 +53,6 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 
-" let g:prettier#exec_cmd_path = "client/node_modules/prettier/bin-prettier.js"
-
 let g:Lf_CommandMap = {'<C-x>': ['<C-_>'], '<C-]>': ['<C-\>'], '<C-S>': ['<C-W>']}
 
 map <Leader>t :w<CR>:TestFile<CR>
@@ -65,9 +61,7 @@ map <Leader>l :w<CR>:TestLast<CR>
 map <Leader>a :w<CR>:TestSuite<CR>
 
 map <Leader>q :vsp .<CR>
-map <Leader>f :echo @%<CR>
 map <Leader>* :F <cword><CR>
-map <Leader>S :Gstatus<CR>
 
 nmap <leader>w :cw<CR>
 nmap <leader>] :cn<CR>
@@ -85,7 +79,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 autocmd!
-au CursorHoldI <buffer> stopinsert
 au FocusLost,BufLeave * wa
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 syntax on
@@ -118,12 +111,3 @@ func GitGrep(...)
   let &grepprg = save
 endfun
 command -nargs=? F call GitGrep(<f-args>)
-
-" Triger `autoread` when files changes on disk
-" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
-autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-" Notification after file change
-" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
-autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
