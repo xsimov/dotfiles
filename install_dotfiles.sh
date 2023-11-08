@@ -24,6 +24,7 @@ ln -s -f $(pwd)/zsh/zshrc ~/.zshrc
 ln -s -f $(pwd)/tmux/tmux.conf ~/.tmux.conf
 ln -s -f $(pwd)/global_gitignore ~/.gitignore
 ln -s -f $(pwd)/gitconfig ~/.gitconfig
+ln -s -f $(pwd)/lvim ~/.config/lvim
 
 # install oh-my-zsh
 # MISSING!
