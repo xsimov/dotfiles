@@ -47,6 +47,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'prettier/vim-prettier'
 Plugin 'othree/yajs.vim'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'github/copilot.vim'
 
 
 " All of your Plugins must be added before the following line

@@ -2,7 +2,7 @@ source ~/Code/dotfiles/vim/plugins.vim
 source ~/Code/dotfiles/vim/prettier.vim
 
 set number
-set nornu
+set rnu
 set expandtab
 set shiftwidth=2
 set softtabstop=2
