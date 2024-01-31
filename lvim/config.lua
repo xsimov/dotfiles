@@ -20,8 +20,10 @@ lvim.leader = "\\"
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
 lvim.keys.normal_mode["<leader>\\"] = ":vsp<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":tabprevious<CR>"
-lvim.keys.normal_mode["<S-l>"] = ":tabnext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":bp<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":bn<CR>"
+-- lvim.keys.normal_mode["<S-h>"] = ":tabprevious<CR>"
+-- lvim.keys.normal_mode["<S-l>"] = ":tabnext<CR>"
 lvim.keys.normal_mode["<C-h>"] = ":winc h<CR>"
 lvim.keys.normal_mode["<C-j>"] = ":winc j<CR>"
 lvim.keys.normal_mode["<C-k>"] = ":winc k<CR>"
