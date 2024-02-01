@@ -1,18 +1,23 @@
-export PATH="/Users/xavier.simo/.local/bin:/usr/local/opt/openssl@1.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin:$HOME/.node/bin:$PATH"
+export PATH="/Users/xavier.simo/.local/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/bin:/usr/bin:$PATH"
+export PATH="/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin:$HOME/.node/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
-export PATH="/Users/xavier.simo/Library/Caches/fnm_multishells/54647_1650889982263/bin":$PATH
-export FNM_MULTISHELL_PATH="/Users/xavier.simo/Library/Caches/fnm_multishells/54647_1650889982263"
-export FNM_VERSION_FILE_STRATEGY="local"
-export FNM_DIR="/Users/xavier.simo/Library/Application Support/fnm"
-export FNM_LOGLEVEL="info"
-export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
-export FNM_ARCH="x64"
+export GPG_TTY=$(tty)
+export PATH="/Users/xavier.simo/.oly/bin:$PATH"
+export TERM="screen-256color"
+export XINGBOX_NAME=dev-xavier-simo
+export XINGBOX_API_KEY=$(cat ~/.xingboxctl | sed 's/{"ApiKey":"//' | sed 's/"}//')
+
+export APPLE_SSH_ADD_BEHAVIOR=macos
+
+export EVENT_NOKQUEUE=1
+export EDITOR='lvim'
+export GIT_EDITOR='lvim'
+
+setopt noautocd
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -68,55 +73,24 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-export EVENT_NOKQUEUE=1
-export EDITOR='nvim'
-export GIT_EDITOR='nvim'
 # export EDITOR='subl -w'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export APPLE_SSH_ADD_BEHAVIOR=macos
-
 alias ls='ls -lahG'
-
 alias be='bundle exec'
 alias rubocurrent='bundle exec rubocop $(git status | egrep modified.*rb | sed s/modified://)'
 alias fco='git checkout $(git branch | fzf)'
 alias gitcurrentbranch='git branch --abbrev | grep "*" | sed -E "s/\* //"'
-alias appPod="kubectl get pods -l app | grep 'app' | tail -n 1 | sed -Ee 's/ +.*$//'"
 
 unsetopt nomatch
 eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export GPG_TTY=$(tty)
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-export PATH="/Users/xavier.simo/.oly/bin:$PATH"
-export TERM="screen-256color"
-export XINGBOX_NAME=dev-xavier-simo
-export XINGBOX_API_KEY=$(cat ~/.xingboxctl | sed 's/{"ApiKey":"//' | sed 's/"}//')
-
-# Load nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-
 # Load zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 discard_other_translations () {
   git status | egrep 'modified.*config.*\.yml' | egrep -v 'xt[mp]' | sed 's/modified://' | xargs git checkout

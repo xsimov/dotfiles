@@ -1,11 +1,13 @@
 #! /bin/sh
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Run macOS terminal tweaks
 sh ./macos/tweaks.sh
 
-# add an if to avoid installing it more than once
 # Install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ln -s $(pwd)/Brewfile ~/Brewfile
 
@@ -26,12 +28,7 @@ ln -s -f $(pwd)/global_gitignore ~/.gitignore
 ln -s -f $(pwd)/gitconfig ~/.gitconfig
 ln -s -f $(pwd)/lvim ~/.config/lvim
 
-# install oh-my-zsh
-# MISSING!
-
 ln -s -f $(pwd)/zsh/avit_modified.zsh-theme ~/.oh-my-zsh/themes/avit_modified.zsh-theme
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 # install nvim plugins
-nvim +PluginInstall +qall
+lvim +PluginInstall +qall
