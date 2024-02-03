@@ -29,6 +29,3 @@ ln -s -f $(pwd)/gitconfig ~/.gitconfig
 ln -s -f $(pwd)/lvim ~/.config/lvim
 
 ln -s -f $(pwd)/zsh/avit_modified.zsh-theme ~/.oh-my-zsh/themes/avit_modified.zsh-theme
-
-# install nvim plugins
-lvim +PluginInstall +qall
