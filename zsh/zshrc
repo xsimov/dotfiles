@@ -1,5 +1,5 @@
-export PATH="/Users/xavier.simo/.local/bin:/opt/homebrew/opt/openssl@3/bin:/opt/homebrew/bin:/usr/bin:$PATH"
-export PATH="/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin:$HOME/.node/bin:$PATH"
+export PATH="/Users/xavier.simo/.local/bin:/usr/local/opt/openssl@3/bin:/usr/local/bin:/usr/bin:$PATH"
+export PATH="/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/opt/X11/bin:/usr/texbin:$HOME/go/bin:$HOME/.node/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -90,7 +90,7 @@ eval "$(rbenv init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Load zsh syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 discard_other_translations () {
   git status | egrep 'modified.*config.*\.yml' | egrep -v 'xt[mp]' | sed 's/modified://' | xargs git checkout
