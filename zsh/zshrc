@@ -14,8 +14,8 @@ export XINGBOX_API_KEY=$(cat ~/.xingboxctl | sed 's/{"ApiKey":"//' | sed 's/"}//
 export APPLE_SSH_ADD_BEHAVIOR=macos
 
 export EVENT_NOKQUEUE=1
-export EDITOR='lvim'
-export GIT_EDITOR='lvim'
+export EDITOR='nvim'
+export GIT_EDITOR='nvim'
 
 setopt noautocd
 
@@ -99,3 +99,24 @@ discard_other_translations () {
 recreateXingbox() {
   curl -X POST -H "api-key: $XINGBOX_API_KEY" "accept: application/json" "https://xingbox-manager.xing.io/api/xingboxes/$XINGBOX_NAME/recreate" -v
 }
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH"
+
+# bun completions
+[ -s "/Users/xavier.simo/.bun/_bun" ] && source "/Users/xavier.simo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="/Users/xavier.simo/.local/state/fnm_multishells/178_1728401142043/bin":$PATH
+export FNM_ARCH="arm64"
+export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
+export FNM_MULTISHELL_PATH="/Users/xavier.simo/.local/state/fnm_multishells/178_1728401142043"
+export FNM_DIR="/Users/xavier.simo/Library/Application Support/fnm"
+export FNM_RESOLVE_ENGINES="false"
+export FNM_COREPACK_ENABLED="false"
+export FNM_LOGLEVEL="info"
+export FNM_VERSION_FILE_STRATEGY="local"
+
+export PATH="/Users/xavier.simo/.oly/bin:$PATH"
