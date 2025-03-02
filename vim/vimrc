@@ -1,6 +1,3 @@
-source ~/Code/dotfiles/vim/plugins.vim
-source ~/Code/dotfiles/vim/prettier.vim
-
 set number
 set rnu
 set expandtab
@@ -99,15 +96,3 @@ endfunction
 function HideOver80Chars()
   match OverLength //
 endfunction
-
-func GitGrep(...)
-  let save = &grepprg
-  set grepprg=git\ grep\ -n\ $*
-  let s = 'grep'
-  for i in a:000
-    let s = s . ' ' . i
-  endfor
-  exe s
-  let &grepprg = save
-endfun
-command -nargs=? F call GitGrep(<f-args>)
