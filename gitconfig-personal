@@ -1,0 +1,7 @@
+[user]
+	email = xsimov@xing.com
+	name = Xavier Simó
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
